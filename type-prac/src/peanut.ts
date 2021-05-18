@@ -55,14 +55,14 @@ function getStudentDetails2(studentID: number):  {
         studentID: number;  //반환되는 객체의 구조를 타입으로 지정
         studentName: string;
         age?: number,
-        gender: string,
+        gender:  GenderType.Male, // gender의 값은 사실 male, female로 두개 밖에없다 단순히 string말고 좀더 정확하게 정의 할 수 있는 방법은?
         subject: string,
         courseCompleted: boolean
 } {
     return {
 studentID  : 1234,
 studentName  : 'hmk',
-gender  : 'male',
+gender  : GenderType.Male,
 subject  :'JavaScript',
 courseCompleted : false,
     }// void가 아닌 함수들은 타입에 맞는 return을 꼭해줘야 오류가 안뜬다
@@ -78,3 +78,37 @@ function saveStudentDetails(student: Student): void { // 인터페이스를 매�
 }
 
 saveStudentDetails(student1) //student1 위에서 변수로 지정!
+
+
+//enum 선언 //ender의 값은 사실 male, female로 두개 밖에없다 단순히 string말고 좀더 정확하게 정의 할 수 있는 방법은?
+
+enum GenderType {
+    // Male,
+    // Female // 이렇게 쎃어 놓으면 숫자 열거형으로 자바스크립트 파일로 컴파일시 [GenderType["Male"] = 0] = "Male"이런식으로 나온다
+    Male = 'male',
+    Female = 'female' //  [GenderType["Male"]] = "male" 문자 열거형으로 컴파일됨
+}
+
+
+
+
+function getStudentDetails3(studentID: number):  {
+        studentID: number;  //반환되는 객체의 구조를 타입으로 지정
+        studentName: string;
+        age?: number,
+        gender: GenderType, // gender의 값은 사실 male, female로 두개 밖에없다 단순히 string말고 좀더 정확하게 정의 할 수 있는 방법은?
+        // enum 말고 리터럴 타입으로 조건?을 줄 수도 있다
+        // gender: 'male'|'female'|'genderNeutral',
+    subject: string,
+        courseCompleted: boolean
+} {
+    return {
+studentID  : 1234,
+studentName  : 'hmk',
+gender  : GenderType.Male,
+subject  :'JavaScript',
+courseCompleted : false,
+    }// void가 아닌 함수들은 타입에 맞는 return을 꼭해줘야 오류가 안뜬다
+}
+
+/// 리터럴 타입
