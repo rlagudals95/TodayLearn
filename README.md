@@ -4,3 +4,6 @@ today i learn
 + https://www.youtube.com/watch?v=VJ8rvsw2j5w&t=2s
 + https://www.youtube.com/watch?v=g-kauNOTVRY&t=186s
 + https://www.youtube.com/watch?v=qSRPwBrDeXU&list=LL&index=1&t=1605s
+
+# useMemo, useCallBack
++ https://www.youtube.com/watch?v=uBmnf_k7_r0&t=454s
